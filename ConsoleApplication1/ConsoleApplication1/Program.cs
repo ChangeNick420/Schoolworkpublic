@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
-/*MORE DETAIL*/
+//First, the program asks if you're ready. THen, it let's you choose either rock, paper or scissors.
+//Computer chooses one too. After each match, the points are added to the winner's score.
 
 namespace ConsoleApp2
 {
@@ -10,13 +11,15 @@ namespace ConsoleApp2
         {
             string rdy;
             int selection;
+            string botselection;
             string rock;
             string paper;
             string scissors;
+            string result;
             int score = 0;
-            Boolean outcome;
+            int botscore = 0;
             Random random = new Random();
-            int RandomNumber = random.Next(1, 3);
+            int bot = random.Next(1, 3);
             Console.WriteLine("Hello, let's play rock, paper, scissors. I'll start. We show the sign when I say 'Shoot'. Ready?");
             Thread.Sleep(1000);
             Console.WriteLine("Yes/No");
@@ -47,10 +50,68 @@ namespace ConsoleApp2
                     result = "scissors";
                     break;
                 default:
+                    result = "";
                     break;
             }
+            switch (bot)
+            {
+                case 1:
+                    botselection = "rock";
+                    break;
+                case 2:
+                    botselection = "paper";
+                    break;
+                case 3:
+                    botselection = "scissors";
+                    break;
+                default:
+                    botselection = "";
+                    break;
+            }
+            if (result == botselection)
+            {
+                Console.WriteLine("Draw! Nobody wins");
+                Console.ReadLine();
+            }
+            else if (result == "rock" || botselection == "paper")
+            {
+                Console.WriteLine("You lose!");
+                Console.ReadLine();
+                botscore++;
+            }
+            else if (result == "paper" || botselection == "scissors")
+            {
+                Console.WriteLine("You lose!");
+                Console.ReadLine();
+                botscore++;
+            }
+            else if (result == "scissors" || botselection == "rock")
+            {
+                Console.WriteLine("You win!");
+                    Console.ReadLine();
+                score++;
 
-            Console.WriteLine("Rock...");
+            }
+            else if (result == "rock" || botselection == "scissors")
+            {
+                Console.WriteLine("You win!");
+                    Console.ReadLine();
+                score++;
+            }
+            else if (result == "paper" || botselection == "rock")
+            {
+                Console.WriteLine("You win!");
+                Console.ReadLine();
+                score++;
+            }
+            else if (result == "scissors" || botselection == "paper")
+            {
+                Console.WriteLine("You win!");
+                Console.ReadLine();
+                score++;
+            }
+        
+                Console.WriteLine("Rock...");
             Thread.Sleep(300);
             Console.WriteLine("Paper...");
             Thread.Sleep(300);
