@@ -17,6 +17,7 @@ namespace ConsoleApp2
             string scissors;
             string sign;
             string result;
+            string again;
             int score = 0;
             int botscore = 0;
             Random random = new Random();
@@ -28,22 +29,30 @@ namespace ConsoleApp2
             //a bit of code asking if the user is ready for a game
             if (rdy == "YES")
             {
-                Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock\n 2. Paper\n or 3. Scissors\n");
             }
             else if (rdy == "NO")
             {
                 Console.WriteLine("Hurry up then, my friend!");
                 Console.ReadLine();
+                Console.WriteLine("Ready now? I'll assume you are");
+                Thread.Sleep(2000);
+                Console.ReadLine();
+                Thread.Sleep(2000);
             }
 
             Console.WriteLine("Rock...");
-            Thread.Sleep(300);
+            Thread.Sleep(1500);
             Console.WriteLine("Paper...");
-            Thread.Sleep(300);
+            Thread.Sleep(1500);
             Console.WriteLine("Scissors...");
+            Thread.Sleep(1500);
             Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock 2. Paper or 3. Scissors");
             selection = Convert.ToInt32(Console.ReadLine());
+            Thread.Sleep(1500);
             Console.WriteLine("Shoot!");
+            Console.ReadLine();
+            Thread.Sleep(500);
+            Console.WriteLine("Click enter to see the result, and enter again to see the score and choose if you want to try again");
             Console.ReadLine();
             switch (selection)
             {
@@ -82,42 +91,43 @@ namespace ConsoleApp2
             }
             else if (sign == "rock" || botselection == "paper")
             {
-                Console.WriteLine("You lose!");
+                Console.WriteLine("You:{0} - Opponent: {1}. You lose!", sign, botselection);
                 Console.ReadLine();
                 botscore++;
             }
             else if (sign == "paper" || botselection == "scissors")
             {
-                Console.WriteLine("You lose!");
+                Console.WriteLine("You:{0} Opponent: {1}. You lose!", sign, botselection);
                 Console.ReadLine();
                 botscore++;
             }
             else if (sign == "scissors" || botselection == "rock")
             {
-                Console.WriteLine("You win!");
-                    Console.ReadLine();
+                Console.WriteLine("You:{0} Opponent: {1}. You lose!", sign, botselection);
+                Console.ReadLine();
                 botscore++;
 
             }
             else if (sign == "rock" || botselection == "scissors")
             {
-                Console.WriteLine("You win!");
-                    Console.ReadLine();
+                Console.WriteLine("You:{0} Opponent: {1}. You win!", sign, botselection);
+                Console.ReadLine();
                 score++;
             }
             else if (sign == "paper" || botselection == "rock")
             {
-                Console.WriteLine("You win!");
+                Console.WriteLine("You:{0} Opponent: {1}. You win!", sign, botselection);
                 Console.ReadLine();
                 score++;
             }
             else if (sign == "scissors" || botselection == "paper")
             {
-                Console.WriteLine("You win!");
+                Console.WriteLine("You:{0} Opponent: {1}. You win!", sign, botselection);
                 Console.ReadLine();
                 score++;
             }
-
+            Console.WriteLine("The score is '{0}':'{1}'. Would you like to try again?", score, botscore);
+            Console.ReadLine();
         }
     }
 }
