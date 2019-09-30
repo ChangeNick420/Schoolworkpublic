@@ -15,6 +15,7 @@ namespace ConsoleApp2
             string rock;
             string paper;
             string scissors;
+            string sign;
             string result;
             int score = 0;
             int botscore = 0;
@@ -31,26 +32,32 @@ namespace ConsoleApp2
             }
             else if (rdy == "NO")
             {
-                Console.WriteLine("Alright, I'm gonna give you 5 seconds, but you have to be ready after that.");
+                Console.WriteLine("Hurry up then, my friend!");
                 Console.ReadLine();
-                Thread.Sleep(5000);
-                Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock 2. Paper or 3. Scissors");
             }
 
+            Console.WriteLine("Rock...");
+            Thread.Sleep(300);
+            Console.WriteLine("Paper...");
+            Thread.Sleep(300);
+            Console.WriteLine("Scissors...");
+            Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock 2. Paper or 3. Scissors");
             selection = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Shoot!");
+            Console.ReadLine();
             switch (selection)
             {
                 case 1:
-                    result = "rock";
+                    sign = "rock";
                     break;
                 case 2:
-                    result = "paper";
+                    sign = "paper";
                     break;
                 case 3:
-                    result = "scissors";
+                    sign = "scissors";
                     break;
                 default:
-                    result = "";
+                    sign = "";
                     break;
             }
             switch (bot)
@@ -68,58 +75,49 @@ namespace ConsoleApp2
                     botselection = "";
                     break;
             }
-            if (result == botselection)
+            if (sign == botselection)
             {
                 Console.WriteLine("Draw! Nobody wins");
                 Console.ReadLine();
             }
-            else if (result == "rock" || botselection == "paper")
+            else if (sign == "rock" || botselection == "paper")
             {
                 Console.WriteLine("You lose!");
                 Console.ReadLine();
                 botscore++;
             }
-            else if (result == "paper" || botselection == "scissors")
+            else if (sign == "paper" || botselection == "scissors")
             {
                 Console.WriteLine("You lose!");
                 Console.ReadLine();
                 botscore++;
             }
-            else if (result == "scissors" || botselection == "rock")
+            else if (sign == "scissors" || botselection == "rock")
             {
                 Console.WriteLine("You win!");
                     Console.ReadLine();
-                score++;
+                botscore++;
 
             }
-            else if (result == "rock" || botselection == "scissors")
+            else if (sign == "rock" || botselection == "scissors")
             {
                 Console.WriteLine("You win!");
                     Console.ReadLine();
                 score++;
             }
-            else if (result == "paper" || botselection == "rock")
+            else if (sign == "paper" || botselection == "rock")
             {
                 Console.WriteLine("You win!");
                 Console.ReadLine();
                 score++;
             }
-            else if (result == "scissors" || botselection == "paper")
+            else if (sign == "scissors" || botselection == "paper")
             {
                 Console.WriteLine("You win!");
                 Console.ReadLine();
                 score++;
             }
-        
-                Console.WriteLine("Rock...");
-            Thread.Sleep(300);
-            Console.WriteLine("Paper...");
-            Thread.Sleep(300);
-            Console.WriteLine("Scissors...");
-            Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock 2. Paper or 3. Scissors");
-            Console.ReadLine();
-            Console.WriteLine("Shoot!");
-            Console.ReadLine();
+
         }
     }
 }
