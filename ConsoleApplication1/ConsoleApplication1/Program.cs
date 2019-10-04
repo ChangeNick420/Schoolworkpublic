@@ -39,7 +39,8 @@ namespace ConsoleApp2
                 Console.ReadLine();
                 Thread.Sleep(2000);
             }
-
+                void Game()
+                {
             Console.WriteLine("Rock...");
             Thread.Sleep(500);
             Console.WriteLine("Paper...");
@@ -125,8 +126,18 @@ namespace ConsoleApp2
                 Console.ReadLine();
                 score++;
             }
+            }
             Console.WriteLine("The score is '{0}':'{1}'. Would you like to try again?", score, botscore);
+            rdy = Console.ReadLine().ToUpper();
+            if (rdy = "yes") while (rdy = "no")
+                {         
+                 Game();
+                    }
+            else if (rdy = "no")
+                {
+}               Console.WriteLine("Come one then! Get ready ASAP");
             Console.ReadLine();
+
         }
     }
 }
