@@ -27,9 +27,10 @@ namespace ConsoleApp2
             Console.WriteLine("Yes/No");
             rdy = Console.ReadLine().ToUpper();
             //a bit of code asking if the user is ready for a game
-            if (rdy == "YES")
+                while (!(rdy == "YES") || (rdy == "NO"))
             {
-                Thread.Sleep(500);
+Console.WriteLine("KURWAAA);
+                Console.ReadLine();
             }
             else if (rdy == "NO")
             {
@@ -135,9 +136,9 @@ namespace ConsoleApp2
                     }
             else if (rdy = "no")
                 {
-}               Console.WriteLine("Come one then! Get ready ASAP");
+              Console.WriteLine("Come one then! Get ready ASAP");
             Console.ReadLine();
-
+            }
         }
     }
 }
