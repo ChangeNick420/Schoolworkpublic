@@ -29,28 +29,27 @@ namespace ConsoleApp2
             //a bit of code asking if the user is ready for a game
             if (rdy == "YES")
             {
+                Thread.Sleep(500);
             }
             else if (rdy == "NO")
             {
                 Console.WriteLine("Hurry up then, my friend!");
-                Console.ReadLine();
+                Thread.Sleep(500);
                 Console.WriteLine("Ready now? I'll assume you are");
-                Thread.Sleep(2000);
                 Console.ReadLine();
                 Thread.Sleep(2000);
             }
 
             Console.WriteLine("Rock...");
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
             Console.WriteLine("Paper...");
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
             Console.WriteLine("Scissors...");
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
             Console.WriteLine("Put a number from 1 to 3 to choose your sign. 1. Rock 2. Paper or 3. Scissors");
             selection = Convert.ToInt32(Console.ReadLine());
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
             Console.WriteLine("Shoot!");
-            Console.ReadLine();
             Thread.Sleep(500);
             Console.WriteLine("Click enter to see the result, and enter again to see the score and choose if you want to try again");
             Console.ReadLine();
