@@ -31,26 +31,25 @@ namespace ConsoleApp2
                 rdy = Console.ReadLine().ToUpper();
             }
             //a bit of code asking if the user is ready for a game
-            do
+            if (rdy == "YES")
             {
+                Console.WriteLine("Let's start now!");
+                Console.ReadLine();
+            }
+            else if (rdy == "NO")
+            {
+                Console.WriteLine("Hurry up then, my friend!");
+                Thread.Sleep(500);
+                Console.WriteLine("Ready now? I'll assume you are");
+                Console.ReadLine();
+                Thread.Sleep(2000);
+            }
+            else
+            {
+                Console.WriteLine("You're supposed to answer either 'yes' or 'no'");
                 goto question;
             }
-            while ((rdy != "YES") || (rdy != "NO"));
-
-                if (rdy == "YES")
-                {
-                    Console.WriteLine("Let's start now!");
-                    Console.ReadLine();
-                }
-                else if (rdy == "NO")
-                {
-                    Console.WriteLine("Hurry up then, my friend!");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Ready now? I'll assume you are");
-                    Console.ReadLine();
-                    Thread.Sleep(2000);
-                }
-            Game:
+        Game:
                 {
                     Console.WriteLine("Rock...");
                     Thread.Sleep(500);
@@ -140,10 +139,14 @@ namespace ConsoleApp2
                 }
                 Console.WriteLine("The score is '{0}':'{1}'. Would you like to try again?", score, botscore);
                 rdy = Console.ReadLine().ToUpper();
-                if (rdy == "Yes")
-                {
-                    goto Game;
-                }
+            if (rdy == "Yes")
+            {
+                goto Game;
+            }
+            else if (rdy == "No")
+            {
+                //next step
+            }
             
 
             
